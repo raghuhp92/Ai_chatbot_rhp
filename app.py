@@ -49,12 +49,12 @@ parser = StrOutputParser()
 user_input = st.chat_input("Ask your doubts...")
 
 if user_input:
-    # 1️⃣ Save user message
+    # Save user message
     st.session_state.chat_history.append(
         {"role": "user", "content": user_input}
     )
 
-    # 2️⃣ Build prompt with FULL history
+    # Build prompt with FULL history
     chat_prompt = [("system", "You are a helpful assistant")]
 
     for msg in st.session_state.chat_history:
@@ -66,11 +66,12 @@ if user_input:
 
     response = chain.invoke({})
 
-    # 3️⃣ Save assistant response
+    # Save assistant response
     st.session_state.chat_history.append(
         {"role": "assistant", "content": response}
     )
 
-    # 4️⃣ Force rerender (important)
+    # Force rerender (important)
     st.rerun()
+
 
