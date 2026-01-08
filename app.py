@@ -7,9 +7,6 @@ from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-import truststore
-truststore.inject_into_ssl()
-
 load_dotenv()
 
 st.set_page_config(
@@ -73,5 +70,6 @@ if user_input:
 
     # Force rerender (important)
     st.rerun()
+
 
 
