@@ -1,5 +1,5 @@
-import truststore
-truststore.inject_into_ssl()
+# import truststore
+# truststore.inject_into_ssl()
 
 import streamlit as st
 from dotenv import load_dotenv
@@ -73,3 +73,4 @@ if user_input:
 
     # 4️⃣ Force rerender (important)
     st.rerun()
+
